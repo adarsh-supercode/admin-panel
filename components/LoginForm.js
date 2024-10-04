@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
-import { supabase } from '../lib/supabaseClient'; // Import supabase client
 
 const LoginForm = ({ setMessage }) => {
   const [username, setUsername] = useState('');
