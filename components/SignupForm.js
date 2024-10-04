@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { supabase } from '../lib/supabaseClient'; // Import supabase client
 
 const SignupForm = ({ onSignupSuccess, setMessage }) => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSignup = async (e) => {
@@ -12,7 +14,7 @@ const SignupForm = ({ onSignupSuccess, setMessage }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ type: 'signup', username, password }),
+      body: JSON.stringify({ type: 'signup', username, email, password }),
     });
 
     const data = await res.json();
@@ -30,6 +32,13 @@ const SignupForm = ({ onSignupSuccess, setMessage }) => {
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <input

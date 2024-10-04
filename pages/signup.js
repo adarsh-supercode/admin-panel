@@ -1,3 +1,5 @@
+// pages/signup.js
+
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import SignupForm from '../components/SignupForm';
