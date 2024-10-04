@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { supabase } from '../lib/supabaseClient'; // Import supabase client
 
 const SignupForm = ({ onSignupSuccess, setMessage }) => {
   const [username, setUsername] = useState('');
